@@ -8,11 +8,15 @@ import {
   Button,
   ScrollView,
   Image,
-  SafeAreaView,
+  Linking,
   TouchableOpacity,
 } from "react-native";
 
+<<<<<<< HEAD
 const Attraction = (props) => {
+=======
+export default function App({navigation}) {
+>>>>>>> main
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -35,10 +39,16 @@ const Attraction = (props) => {
         <Text style={styles.des}>Party Size:</Text>
         <Text style={styles.more}>{props.partySize}</Text>
         <Text style={styles.des}>Website:</Text>
+<<<<<<< HEAD
         <Text style={styles.more} href={props.website}>
           {props.website}
         </Text>
         <TouchableOpacity style={styles.button} onPress={() => {}}>
+=======
+        <Text style={styles.more}
+        onPress={() => Linking.openURL('https://www.mfa.org/')}>https://www.mfa.org/</Text>
+        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("Map Page")}}>
+>>>>>>> main
           <Image style={styles.mapbutton} source={map} />
         </TouchableOpacity>
       </ScrollView>
@@ -55,8 +65,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingVertical: 40,
     backgroundColor: "#B0A1BA",
-    paddingBottom: 0,
-    height: 1030,
+    flexGrow: 1,
   },
   tinyLogo: {
     height: 217,
