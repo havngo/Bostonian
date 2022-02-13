@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import museum from "../assets/museum.jpeg";
 import map from "../assets/map.png";
@@ -12,11 +13,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-<<<<<<< HEAD
 const Attraction = (props) => {
-=======
-export default function App({navigation}) {
->>>>>>> main
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -39,16 +37,18 @@ export default function App({navigation}) {
         <Text style={styles.des}>Party Size:</Text>
         <Text style={styles.more}>{props.partySize}</Text>
         <Text style={styles.des}>Website:</Text>
-<<<<<<< HEAD
-        <Text style={styles.more} href={props.website}>
+        <Text
+          style={styles.link}
+          onPress={() => Linking.openURL(props.website)}
+        >
           {props.website}
         </Text>
-        <TouchableOpacity style={styles.button} onPress={() => {}}>
-=======
-        <Text style={styles.more}
-        onPress={() => Linking.openURL('https://www.mfa.org/')}>https://www.mfa.org/</Text>
-        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("Map Page")}}>
->>>>>>> main
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
           <Image style={styles.mapbutton} source={map} />
         </TouchableOpacity>
       </ScrollView>
@@ -92,6 +92,13 @@ const styles = StyleSheet.create({
     marginRight: 40,
     marginBottom: 12,
     marginLeft: 25,
+  },
+  link: {
+    color: "#5E4C5A",
+    fontSize: 20,
+    marginBottom: 10,
+    marginLeft: 35,
+    textDecorationLine: "underline",
   },
   more: {
     color: "#5E4C5A",

@@ -1,12 +1,12 @@
 import museum from "../../assets/museum.jpeg";
 import Attraction from "../Attraction";
 
-const mfa = ({}) => {
+const Mfa = ({}) => {
   return (
     <Attraction
       imgSource={museum}
       name="Boston Museum of Fine Arts"
-      distance={4.8}
+      distance={0.1}
       hours={[
         "10AM–5PM",
         "10AM–5PM",
@@ -24,4 +24,4 @@ const mfa = ({}) => {
   );
 };
 
-export default mfa;
+export default Mfa;

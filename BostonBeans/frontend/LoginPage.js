@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -37,11 +37,7 @@ const LoginPage = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={loginStyles.loginButton}
-<<<<<<< HEAD
-            onPress={() => navigation.navigate("Bistro")}
-=======
             onPress={() => navigation.navigate("Map Page")}
->>>>>>> main
           >
             Login
           </Text>
@@ -91,7 +87,7 @@ const loginStyles = StyleSheet.create({
   loginButton: {
     alignItems: "center",
     backgroundColor: "#E2DFDF",
-    borderRadius: 300,
+    borderRadius: 100,
     color: "#50808E",
     fontFamily: "Rockwell",
     fontSize: 20,
