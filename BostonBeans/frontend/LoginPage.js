@@ -87,7 +87,6 @@ const loginStyles = StyleSheet.create({
     backgroundColor: "#E2DFDF",
     borderRadius: 100,
     color: "#50808E",
-    fontFamily: "Rockwell",
     fontSize: 20,
     fontWeight: "700",
     justifyContent: "center",
