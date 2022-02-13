@@ -42,10 +42,12 @@ const homeStyles = StyleSheet.create({
     width: "100%",
   },
   text: {
-    fontSize: 60,
-    color: "white",
+    fontSize: 65,
+    color: "#E5E5E5",
     fontFamily: "Rockwell",
     fontWeight: "bold",
+    paddingTop: 3,
+    paddingBottom: 20,
   },
   button: {
     backgroundColor: "#E5E5E5",

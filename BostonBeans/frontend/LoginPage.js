@@ -34,13 +34,11 @@ const LoginPage = ({ navigation }) => {
       <View style={loginStyles.loginButtonContainer}>
         {/* login button container */}
 
-        <TouchableOpacity>
-          <Text
-            style={loginStyles.loginButton}
-            onPress={() => navigation.navigate("Map Page")}
-          >
-            Login
-          </Text>
+        <TouchableOpacity
+          style={loginStyles.loginFrame}
+          onPress={() => navigation.navigate("Map Page")}
+        >
+          <Text style={loginStyles.loginButton}>Login</Text>
         </TouchableOpacity>
         <Text style={loginStyles.instructionText}>Don't have an account?</Text>
         <TouchableOpacity>
@@ -89,13 +87,20 @@ const loginStyles = StyleSheet.create({
     backgroundColor: "#E2DFDF",
     borderRadius: 100,
     color: "#50808E",
-    fontFamily: "Rockwell",
     fontSize: 20,
     fontWeight: "700",
     justifyContent: "center",
-    marginBottom: 30,
-    paddingHorizontal: 50,
-    paddingVertical: 15,
+  },
+  loginFrame: {
+    backgroundColor: "#E5E5E5",
+    borderColor: "#003f5c",
+    borderRadius: 100,
+    height: 40,
+    width: 120,
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 10,
   },
   loginButtonContainer: {
     alignItems: "center",
