@@ -1,12 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Icon } from 'react-native';
-import HomeScreen from './frontend/HomeScreen';
-import React from 'react';
-import LoginPage from './frontend/LoginPage';
-import MapScreen from './frontend/MapScreen'; 
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, Button, Icon } from "react-native";
+import HomeScreen from "./frontend/HomeScreen";
+import React from "react";
+import LoginPage from "./frontend/LoginPage";
+import MapScreen from "./frontend/MapScreen";
 import Attraction from "./frontend/Attraction";
-import { NavigationContainer } from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Mfa from "./frontend/Attractions/mfa";
+import Bistro from "./frontend/Attractions/bistro";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,27 +17,11 @@ export default class App extends React.Component {
     return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-          />
-          <Stack.Screen
-            name="Login Page"
-            component={LoginPage}
-          />
-          <Stack.Screen
-            name="Map Page"
-            component={MapScreen}
-          />
-          <Stack.Screen
-            name="Attraction Page"
-            component={Attraction}
-            // options={{
-            //   headerRight: () => (
-            //   <Icon name="favorite" size={30} color="#900" />
-            //   ),
-            // }}
-          />
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Login Page" component={LoginPage} />
+          <Stack.Screen name="Map Page" component={MapScreen} />
+          <Stack.Screen name="MFA" component={Mfa} />
+          <Stack.Screen name="Bistro" component={Bistro} />
           {/* <Stack.Screen
             name="Filter Page"
             component={Filter}

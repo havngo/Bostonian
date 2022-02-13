@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import museum from "../assets/museum.jpeg";
 import map from "../assets/map.png";
@@ -12,38 +13,48 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function App({navigation}) {
+const Attraction = (props) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
-        <Image style={styles.tinyLogo} source={museum} />
-        <Text style={styles.title}>Boston Museum of Fine Arts</Text>
+        <Image style={styles.tinyLogo} source={props.imgSource} />
+        <Text style={styles.title}>{props.name}</Text>
         <Text style={styles.des}>Distance from You:</Text>
-        <Text style={styles.more}>4.8 miles</Text>
+        <Text style={styles.more}>{props.distance} miles</Text>
         <Text style={styles.des}>Hours:</Text>
-        <Text style={styles.more}>Sunday 10AM–5PM</Text>
-        <Text style={styles.more}>Monday 10AM–5PM</Text>
-        <Text style={styles.more}>Tuesday Closed</Text>
-        <Text style={styles.more}>Wednesday Closed</Text>
-        <Text style={styles.more}>Thursday 10AM–5PM</Text>
-        <Text style={styles.more}>Friday 10AM–5PM</Text>
-        <Text style={styles.more}>Saturday 10AM–5PM</Text>
+        <Text style={styles.more}>Sunday {props.hours[0]}</Text>
+        <Text style={styles.more}>Monday {props.hours[1]}</Text>
+        <Text style={styles.more}>Tuesday {props.hours[2]}</Text>
+        <Text style={styles.more}>Wednesday {props.hours[3]}</Text>
+        <Text style={styles.more}>Thursday {props.hours[4]}</Text>
+        <Text style={styles.more}>Friday {props.hours[5]}</Text>
+        <Text style={styles.more}>Saturday {props.hours[6]}</Text>
         <Text style={styles.des}>Cost:</Text>
-        <Text style={styles.more}>Free! (if you're a student)</Text>
+        <Text style={styles.more}>{props.cost}</Text>
         <Text style={styles.des}>Time Commitment:</Text>
-        <Text style={styles.more}>Hours</Text>
+        <Text style={styles.more}>{props.timeCommitment}</Text>
         <Text style={styles.des}>Party Size:</Text>
-        <Text style={styles.more}>1+</Text>
+        <Text style={styles.more}>{props.partySize}</Text>
         <Text style={styles.des}>Website:</Text>
-        <Text style={styles.more}
-        onPress={() => Linking.openURL('https://www.mfa.org/')}>https://www.mfa.org/</Text>
-        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("Map Page")}}>
+        <Text
+          style={styles.link}
+          onPress={() => Linking.openURL(props.website)}
+        >
+          {props.website}
+        </Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
           <Image style={styles.mapbutton} source={map} />
         </TouchableOpacity>
       </ScrollView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -82,6 +93,13 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     marginLeft: 25,
   },
+  link: {
+    color: "#5E4C5A",
+    fontSize: 20,
+    marginBottom: 10,
+    marginLeft: 35,
+    textDecorationLine: "underline",
+  },
   more: {
     color: "#5E4C5A",
     fontSize: 20,
@@ -101,3 +119,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#E2DFDF",
   },
 });
+
+export default Attraction;

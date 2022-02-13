@@ -86,7 +86,8 @@ const loginStyles = StyleSheet.create({
   },
   loginButton: {
     alignItems: "center",
-    borderRadius: 300,
+    backgroundColor: "#E2DFDF",
+    borderRadius: 100,
     color: "#50808E",
     fontFamily: "Rockwell",
     fontSize: 20,
