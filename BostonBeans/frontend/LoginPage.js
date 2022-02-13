@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  AsyncStorage,
   StyleSheet,
   Text,
   TextInput,
@@ -10,12 +11,11 @@ import {
 const LoginPage = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   return (
     <View style={loginStyles.container}>
       <View style={loginStyles.namePasswordContainer}>
         {/* name and password container */}
-        <Text style={loginStyles.namePasswordText}>Name:</Text>
+        <Text style={loginStyles.namePasswordText}>Email:</Text>
         <TextInput
           onChangeText={(text) => setEmail({ email: text })}
           placeholder="Enter your email"
@@ -34,11 +34,13 @@ const LoginPage = ({ navigation }) => {
       <View style={loginStyles.loginButtonContainer}>
         {/* login button container */}
 
-        <TouchableOpacity
-          style={loginStyles.loginFrame}
-          onPress={() => navigation.navigate("Map Page")}
-        >
-          <Text style={loginStyles.loginButton}>Login</Text>
+        <TouchableOpacity style={loginStyles.loginFrame}>
+          <Text
+            style={loginStyles.loginButton}
+            onPress={() => {saveUserInfo(email, password);navigation.navigate("Map Page")}}
+          >
+            Login
+          </Text>
         </TouchableOpacity>
         <Text style={loginStyles.instructionText}>Don't have an account?</Text>
         <TouchableOpacity>
@@ -48,6 +50,15 @@ const LoginPage = ({ navigation }) => {
     </View>
   );
 };
+
+const saveUserInfo = (email, pw) => {
+  let user = {
+    'email': email.email,
+    'password': pw.password,
+  }
+  AsyncStorage.setItem('user', JSON.stringify(user));
+  console.log("user db", user);
+}
 
 const loginStyles = StyleSheet.create({
   container: {
@@ -93,7 +104,7 @@ const loginStyles = StyleSheet.create({
   },
   loginFrame: {
     backgroundColor: "#E5E5E5",
-    borderColor: "#003f5c",
+    borderColor: "#003F5C",
     borderRadius: 100,
     height: 40,
     width: 120,
