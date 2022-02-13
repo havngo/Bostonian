@@ -7,8 +7,7 @@ import {
   View, ImageBackground
 } from "react-native";
 
-export default class HomeScreen extends React.Component {
-    render() {
+const HomeScreen = ({navigation}) => {
         return (
             <ImageBackground 
                 source={require('../assets/background.png')}
@@ -16,11 +15,11 @@ export default class HomeScreen extends React.Component {
                 <Text style={homeStyles.text}>Bostonian</Text>
                 <TouchableOpacity 
                 style={homeStyles.button}
-                onPress={() => {}}>
+                onPress={() => {navigation.navigate("LoginPage")}}>
                     <Text>Let's go</Text>
                 </TouchableOpacity>
             </ImageBackground>);
-}}
+}
 
 const homeStyles = StyleSheet.create({
     background: {
@@ -45,3 +44,6 @@ const homeStyles = StyleSheet.create({
       alignItems: 'center',
     },
 })
+
+
+export default HomeScreen;
