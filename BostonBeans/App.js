@@ -10,6 +10,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { AsyncStorage } from 'react-native';
 import Mfa from "./frontend/Attractions/mfa";
 import Bistro from "./frontend/Attractions/bistro";
+import Filter from "./frontend/Filter";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,10 +24,10 @@ export default class App extends React.Component {
           <Stack.Screen name="Map Page" component={MapScreen} />
           <Stack.Screen name="MFA" component={Mfa} />
           <Stack.Screen name="Bistro" component={Bistro} />
-          {/* <Stack.Screen
+          <Stack.Screen
             name="Filter Page"
             component={Filter}
-          /> */}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );

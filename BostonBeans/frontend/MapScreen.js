@@ -41,7 +41,7 @@ const MapScreen = ({ navigation }) => {
       <TouchableOpacity
         style={mapStyles.button}
         onPress={() => {
-          navigation.navigate("Home");
+          navigation.navigate("Filter Page");
         }}
       >
         <Text
