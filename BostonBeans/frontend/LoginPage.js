@@ -8,7 +8,11 @@ import {
 } from "react-native";
 
 const LoginPage = ({ navigation }) => {
+<<<<<<< HEAD
   this.state = {
+=======
+  let state = {
+>>>>>>> main
     email: "",
     password: "",
   };
@@ -39,7 +43,11 @@ const LoginPage = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={loginStyles.loginButton}
+<<<<<<< HEAD
             onPress={() => navigation.navigate("Attraction Page")}
+=======
+            onPress={() => navigation.navigate("Map Page")}
+>>>>>>> main
           >
             Login
           </Text>
