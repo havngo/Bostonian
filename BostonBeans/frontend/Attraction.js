@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import museum from "./museum.jpeg";
-import map from "./map.png";
+import museum from "../assets/museum.jpeg";
+import map from "../assets/map.png";
 import {
   StyleSheet,
   Text,
