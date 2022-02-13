@@ -46,6 +46,7 @@ const homeStyles = StyleSheet.create({
     color: "white",
     fontFamily: "Rockwell",
     fontWeight: "bold",
+    paddingTop: 3,
   },
   button: {
     backgroundColor: "#E5E5E5",
