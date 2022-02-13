@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {
+  AsyncStorage,
   StyleSheet,
   Text,
   TextInput,
@@ -10,12 +11,11 @@ import {
 const LoginPage = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   return (
     <View style={loginStyles.container}>
       <View style={loginStyles.namePasswordContainer}>
         {/* name and password container */}
-        <Text style={loginStyles.namePasswordText}>Name:</Text>
+        <Text style={loginStyles.namePasswordText}>Email:</Text>
         <TextInput
           onChangeText={(text) => setEmail({ email: text })}
           placeholder="Enter your email"
@@ -37,19 +37,35 @@ const LoginPage = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={loginStyles.loginButton}
-            onPress={() => navigation.navigate("Map Page")}
+            onPress={() => {saveUserInfo(email, password);navigation.navigate("Map Page")}}
           >
             Login
           </Text>
         </TouchableOpacity>
         <Text style={loginStyles.instructionText}>Don't have an account?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => displayUserInfo()}>
           <Text style={loginStyles.instructionTextButton}> Sign Up! </Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
+
+const saveUserInfo = (email, pw) => {
+  let user = {
+    'email': email.email,
+    'password': pw.password,
+  }
+  AsyncStorage.setItem('user', JSON.stringify(user));
+  console.log("user db", user);
+}
+
+const displayUserInfo = async () =>{
+  let user = await AsyncStorage.getItem('user');  
+  let parsed = JSON.parse(user);  
+  alert(parsed.email);  
+}
 
 const loginStyles = StyleSheet.create({
   container: {

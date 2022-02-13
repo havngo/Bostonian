@@ -39,6 +39,11 @@ const MapScreen = ({navigation}) => {
                     onPress={() => {navigation.navigate("Home")}}> 
                         <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}, {fontWeight:'bold'}}>Filter (0)</Text>
                     </TouchableOpacity>
+                    <TouchableOpacity 
+                    style={mapStyles.account}
+                    onPress={() => {navigation.navigate("Account Page")}}> 
+                        <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}, {fontWeight:'bold'}}>Account</Text>
+                    </TouchableOpacity>
                 </View>
         );
 }
@@ -71,6 +76,17 @@ const mapStyles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center'
     },
+    // account: {
+    //   marginBottom: 20,
+    //   backgroundColor: "#B0A1BA",
+    //   borderColor: "#003f5c",
+    //   borderRadius: 300,
+    //   height: 40,
+    //   width: 150,
+    //   padding: 10,
+    //   alignItems: 'center',
+    //   justifyContent: 'center'
+    // },
 })
 
 const styles = StyleSheet.create({

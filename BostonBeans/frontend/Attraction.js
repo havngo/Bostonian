@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from "expo-status-bar";
 import museum from "../assets/museum.jpeg";
 import map from "../assets/map.png";
@@ -12,7 +13,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function App({navigation}) {
+export default function App(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -37,7 +39,7 @@ export default function App({navigation}) {
         <Text style={styles.des}>Website:</Text>
         <Text style={styles.more}
         onPress={() => Linking.openURL('https://www.mfa.org/')}>https://www.mfa.org/</Text>
-        <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("Map Page")}}>
+        <TouchableOpacity style={styles.button} onPress={() => {navigation.goBack()}}>
           <Image style={styles.mapbutton} source={map} />
         </TouchableOpacity>
       </ScrollView>

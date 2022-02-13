@@ -7,6 +7,8 @@ import MapScreen from './frontend/MapScreen';
 import Attraction from "./frontend/Attraction";
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { AsyncStorage } from 'react-native';
+import AccountScreen from './frontend/AccountScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,11 +32,6 @@ export default class App extends React.Component {
           <Stack.Screen
             name="Attraction Page"
             component={Attraction}
-            // options={{
-            //   headerRight: () => (
-            //   <Icon name="favorite" size={30} color="#900" />
-            //   ),
-            // }}
           />
           {/* <Stack.Screen
             name="Filter Page"
