@@ -34,13 +34,11 @@ const LoginPage = ({ navigation }) => {
       <View style={loginStyles.loginButtonContainer}>
         {/* login button container */}
 
-        <TouchableOpacity style={loginStyles.loginFrame}>
-          <Text
-            style={loginStyles.loginButton}
-            onPress={() => navigation.navigate("Map Page")}
-          >
-            Login
-          </Text>
+        <TouchableOpacity
+          style={loginStyles.loginFrame}
+          onPress={() => navigation.navigate("Map Page")}
+        >
+          <Text style={loginStyles.loginButton}>Login</Text>
         </TouchableOpacity>
         <Text style={loginStyles.instructionText}>Don't have an account?</Text>
         <TouchableOpacity>
