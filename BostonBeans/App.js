@@ -19,12 +19,16 @@ export default class App extends React.Component {
             component={HomeScreen}
           />
           <Stack.Screen
-            name="LoginPage"
+            name="Login Page"
             component={LoginPage}
           />
           <Stack.Screen
-            name="MapPage"
+            name="Map Page"
             component={MapScreen}
+          />
+          <Stack.Screen
+            name="Attraction Page"
+            component={Attaction}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -6,7 +6,7 @@ import {
   View, 
 } from "react-native";
 import MapView, { Marker, Callout } from "react-native-maps";
-import map from "./assets/map.png";
+import map from "../assets/map.png";
 
 const MyMarker = () => {
   return (
@@ -25,7 +25,7 @@ const MyMarker = () => {
 
 const MapScreen = ({navigation}) => {
         return (
-            <View style={mapStyles.background}>
+            //<View style={mapStyles.background}>
                 <View style={styles.container}>
                     <MapView
                         style={styles.map}
@@ -40,14 +40,14 @@ const MapScreen = ({navigation}) => {
                         <MyMarker />
                     </MapView>
                 </View>
-                <View style={{flex: 1}}>
-                    <TouchableOpacity 
-                    style={mapStyles.button}
-                    onPress={() => {}}>
-                        <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}, {fontWeight:'bold'}}>Filter (0)</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+            //     <View style={{flex: 1}}>
+            //         <TouchableOpacity 
+            //         style={mapStyles.button}
+            //         onPress={() => {}}>
+            //             <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}, {fontWeight:'bold'}}>Filter (0)</Text>
+            //         </TouchableOpacity>
+            //     </View>
+            // </View>
         );
 }
 

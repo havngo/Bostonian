@@ -15,7 +15,7 @@ const HomeScreen = ({navigation}) => {
                 <Text style={homeStyles.text}>Bostonian</Text>
                 <TouchableOpacity 
                 style={homeStyles.button}
-                onPress={() => {navigation.navigate("LoginPage")}}>
+                onPress={() => {navigation.navigate("Login Page")}}>
                     <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}}>Let's go</Text>
                 </TouchableOpacity>
             </ImageBackground>);
