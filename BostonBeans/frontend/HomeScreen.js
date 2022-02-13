@@ -43,7 +43,7 @@ const homeStyles = StyleSheet.create({
   },
   text: {
     fontSize: 60,
-    color: "white",
+    color: "#E5E5E5",
     fontFamily: "Rockwell",
     fontWeight: "bold",
     paddingTop: 3,
