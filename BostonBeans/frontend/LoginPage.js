@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   StyleSheet,
   Text,
@@ -8,10 +8,8 @@ import {
 } from "react-native";
 
 const LoginPage = ({ navigation }) => {
-  let state = {
-    email: "",
-    password: "",
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <View style={loginStyles.container}>
@@ -19,14 +17,14 @@ const LoginPage = ({ navigation }) => {
         {/* name and password container */}
         <Text style={loginStyles.namePasswordText}>Name:</Text>
         <TextInput
-          onChangeText={(text) => this.setState({ email: text })}
+          onChangeText={(text) => setEmail({ email: text })}
           placeholder="Enter your email"
           placeholderTextColor="gray"
           style={loginStyles.inputText}
         />
         <Text style={loginStyles.namePasswordText}>Password:</Text>
         <TextInput
-          onChangeText={(text) => this.setState({ password: text })}
+          onChangeText={(text) => setPassword({ password: text })}
           placeholder="Enter your password"
           placeholderTextColor="gray"
           secureTextEntry={true}

@@ -2,9 +2,8 @@ import React from "react";
 import {
   StyleSheet,
   Text,
-  TextInput,
-  TouchableOpacity,
   View,
+  TouchableOpacity,
   ImageBackground,
 } from "react-native";
 
@@ -17,7 +16,7 @@ const HomeScreen = ({navigation}) => {
                 <TouchableOpacity 
                 style={homeStyles.button}
                 onPress={() => {navigation.navigate("Login Page")}}>
-                    <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}}>Let's go</Text>
+                    <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}, {fontWeight: 'bold'}}>Let's go!</Text>
                 </TouchableOpacity>
             </ImageBackground>);
 }

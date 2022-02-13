@@ -34,15 +34,12 @@ const MapScreen = ({navigation}) => {
                                 pinColor={"#fff"}
                             ></Marker>
                     </MapView>
+                    <TouchableOpacity 
+                    style={mapStyles.button}
+                    onPress={() => {navigation.navigate("Home")}}> 
+                        <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}, {fontWeight:'bold'}}>Filter (0)</Text>
+                    </TouchableOpacity>
                 </View>
-            //     <View style={{flex: 1}}>
-            //         <TouchableOpacity 
-            //         style={mapStyles.button}
-            //         onPress={() => {}}>
-            //             <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}, {fontWeight:'bold'}}>Filter (0)</Text>
-            //         </TouchableOpacity>
-            //     </View>
-            // </View>
         );
 }
 
@@ -64,12 +61,12 @@ const mapStyles = StyleSheet.create({
         fontWeight: 'bold',
     },
     button: {
-      marginTop: 10,
-      backgroundColor: "#E5E5E5",
+      marginBottom: 20,
+      backgroundColor: "#B0A1BA",
       borderColor: "#003f5c",
       borderRadius: 100,
       height: 40,
-      width: 120,
+      width: 150,
       padding: 10,
       alignItems: 'center',
       justifyContent: 'center'

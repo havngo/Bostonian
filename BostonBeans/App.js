@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, Icon } from 'react-native';
 import HomeScreen from './frontend/HomeScreen';
 import React from 'react';
 import LoginPage from './frontend/LoginPage';
@@ -30,7 +30,16 @@ export default class App extends React.Component {
           <Stack.Screen
             name="Attraction Page"
             component={Attraction}
+            // options={{
+            //   headerRight: () => (
+            //   <Icon name="favorite" size={30} color="#900" />
+            //   ),
+            // }}
           />
+          {/* <Stack.Screen
+            name="Filter Page"
+            component={Filter}
+          /> */}
         </Stack.Navigator>
       </NavigationContainer>
     );
