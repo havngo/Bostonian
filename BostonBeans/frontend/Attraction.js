@@ -1,7 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
-import museum from "../assets/museum.jpeg";
 import map from "../assets/map.png";
+import BookmarkIcon from "../assets/bookmark.svg";
+
 import {
   StyleSheet,
   Text,
