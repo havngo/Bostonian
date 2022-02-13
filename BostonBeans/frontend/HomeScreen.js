@@ -4,7 +4,8 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View, ImageBackground
+  View,
+  ImageBackground,
 } from "react-native";
 
 const HomeScreen = ({navigation}) => {
@@ -45,6 +46,5 @@ const homeStyles = StyleSheet.create({
       justifyContent: 'center'
     },
 })
-
 
 export default HomeScreen;

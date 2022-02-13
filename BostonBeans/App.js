@@ -4,6 +4,7 @@ import HomeScreen from './frontend/HomeScreen';
 import React from 'react';
 import LoginPage from './frontend/LoginPage';
 import MapScreen from './frontend/MapScreen'; 
+import Attraction from "./frontend/Attraction";
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -28,18 +29,19 @@ export default class App extends React.Component {
           />
           <Stack.Screen
             name="Attraction Page"
-            component={Attaction}
+            component={Attraction}
           />
         </Stack.Navigator>
       </NavigationContainer>
-  );
-}}
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

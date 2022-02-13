@@ -8,20 +8,6 @@ import {
 import MapView, { Marker, Callout } from "react-native-maps";
 import map from "../assets/map.png";
 
-const MyMarker = () => {
-  return (
-    <Marker
-      coordinate={{
-        latitude: 42.3394,
-        longitude: -71.094,
-      }}
-      onPress={() => navigation.navigate("Attraction Page")}
-      image={map}
-      title={"Museum of Fine Arts"}
-      pinColor={"#fff"}
-    ></Marker>
-  );
-}
 
 const MapScreen = ({navigation}) => {
         return (
@@ -30,14 +16,23 @@ const MapScreen = ({navigation}) => {
                     <MapView
                         style={styles.map}
                         initialRegion={{
-                        latitude: 37.78825,
-                        longitude: 65.4324,
+                        latitude: 42.3394,
+                        longitude: -71.050,
                         latitudeDelta: 0.0922,
                         longitudeDelta: 0.0421,
                         }}
                         showsUserLocation={true}
                     >
-                        <MyMarker />
+                            <Marker
+                                coordinate={{
+                                    latitude: 42.3394,
+                                    longitude: -71.094,
+                                }}
+                                onPress={() => navigation.navigate("Attraction Page")}
+                                image={map}
+                                title={"Museum of Fine Arts"}
+                                pinColor={"#fff"}
+                            ></Marker>
                     </MapView>
                 </View>
             //     <View style={{flex: 1}}>
