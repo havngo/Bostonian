@@ -39,7 +39,7 @@ const LoginPage = ({ navigation }) => {
         <TouchableOpacity>
           <Text
             style={loginStyles.loginButton}
-            onPress={() => navigation.navigate("Map Page")}
+            onPress={() => navigation.navigate("MapPage")}
           >
             Login
           </Text>

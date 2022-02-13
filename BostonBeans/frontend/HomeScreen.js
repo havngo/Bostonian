@@ -16,7 +16,7 @@ const HomeScreen = ({navigation}) => {
                 <TouchableOpacity 
                 style={homeStyles.button}
                 onPress={() => {navigation.navigate("LoginPage")}}>
-                    <Text>Let's go</Text>
+                    <Text style={{fontFamily: 'Rockwell'}, {fontSize: 16}}>Let's go</Text>
                 </TouchableOpacity>
             </ImageBackground>);
 }
@@ -29,9 +29,9 @@ const homeStyles = StyleSheet.create({
       width: "100%",
     },
     text: {
-        fontSize: 50,
+        fontSize: 60,
         color: 'white',
-        fontFamily: 'RockWell',
+        fontFamily: 'Rockwell',
         fontWeight: 'bold',
     },
     button: {
@@ -42,6 +42,7 @@ const homeStyles = StyleSheet.create({
       width: 120,
       padding: 10,
       alignItems: 'center',
+      justifyContent: 'center'
     },
 })
 
